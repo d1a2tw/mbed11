@@ -87,11 +87,11 @@ int main(){
    xbee_reply[0] = '\0';
    xbee_reply[1] = '\0';
   }
-  xbee.printf("ATMY 0x123\r\n");
-  reply_messange(xbee_reply, "setting MY : 0x123");
+  xbee.printf("ATMY 0x234\r\n");
+  reply_messange(xbee_reply, "setting MY : 0x234");
 
-  xbee.printf("ATDL 0x234\r\n");
-  reply_messange(xbee_reply, "setting DL : 0x234");
+  xbee.printf("ATDL 0x123\r\n");
+  reply_messange(xbee_reply, "setting DL : 0x123");
 
   xbee.printf("ATWR\r\n");
   reply_messange(xbee_reply, "write config");

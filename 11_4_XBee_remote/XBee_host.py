@@ -9,14 +9,19 @@ char = s.read(2)
 print("Enter AT mode.")
 print(char.decode())
 
-s.write("ATMY 0x123\r\n".encode())
+s.write("ATMY 0x140\r\n".encode())
 char = s.read(3)
-print("Set MY 0x123.")
+print("Set MY 0x140.")
 print(char.decode())
 
-s.write("ATDL 0x234\r\n".encode())
+s.write("ATDL 0x240\r\n".encode())
 char = s.read(3)
-print("Set DL 0x234.")
+print("Set DL 0x240.")
+print(char.decode())
+
+s.write("ATID 0x1\r\n".encode())
+char = s.read(3)
+print("Set PAN ID 0x1.")
 print(char.decode())
 
 s.write("ATWR\r\n".encode())
@@ -40,7 +45,7 @@ print("Exit AT mode.")
 print(char.decode())
 
 # send to remote
-s.write("abcd".encode())
+s.write("abcd\r\n".encode())
 line = s.read(5)
 print('Get:', line.decode())
 
